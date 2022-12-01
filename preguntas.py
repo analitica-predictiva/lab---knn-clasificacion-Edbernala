@@ -50,23 +50,23 @@ def pregunta_02():
     df = pd.read_csv("house-votes-84.csv", sep=",")
 
     # Cree un vector con la variable de respuesta ('party')
-    y = ____
+    y = df["party"].values
 
     # Extraiga las variables de entrada
-    X = ____
+    X = df.drop("party", axis=1).values
 
     # Importe el transformador OrdinalEncoder
-    from ____ import ____
+    from sklearn.preprocessing  import OrdinalEncoder
 
     # Transforme las variables de entrada usando fit_transform
-    X = ____().____(____)
+    X = fit_transform().____(____)
 
     # Importe KNeighborsClassifier de sklearn.neighbors
-    from ____ import ____
+    from sklearn.neighbors import KNeighborsClassifier
     
 
     # Cree un un clasificador k-NN con 6 vecinos
-    knn = ____(____=____)
+    knn = ____(____=6)
 
     # Entrene el clasificador con el conjunto de entrenamiento
     knn.____(____, ____)
@@ -75,7 +75,7 @@ def pregunta_02():
     y_pred = ____.____(____)
 
     # Importe la función confusion_matrix de sklearn.metrics
-    from ____ import ____
+    from sklearn.metrics import confusion_matrix
 
     # Retorne la matriz de confusión
     return ____(____, ____)
