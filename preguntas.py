@@ -16,7 +16,7 @@ def pregunta_01():
     df = pd.read_csv("house-votes-84.csv", sep=",")
 
     # Cree un vector con la variable de respuesta ('party')
-    y = df[____].____
+    y = df["party"].values
 
     # Extraiga las variables de entrada
     X = df.drop(____, _____=1).values
